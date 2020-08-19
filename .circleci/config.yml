@@ -124,13 +124,13 @@ jobs:
       #      - ./bindings/vue/node_modules
 
       # Tests
-      - run:
-          name: Run OnsenUI Tests
-          command: npm run test:skip-build
+      # - run:
+      #     name: Run OnsenUI Tests
+      #     command: npm run test:skip-build
 
-      - run: cd bindings/angular1; npm test
-      - run: cd bindings/angular2; npm test
-      - run: cd bindings/react; npm test
+      # - run: cd bindings/angular1; npm test
+      # - run: cd bindings/angular2; npm test
+      # - run: cd bindings/react; npm test
       #- run: cd bindings/vue; npm test
       - run:
           name: Save test results
