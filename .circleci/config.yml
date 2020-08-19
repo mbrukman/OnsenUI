@@ -108,20 +108,20 @@ jobs:
             - ./bindings/react/node_modules
 
       # bindings/vue
-      - restore_cache:
-          keys:
-            - v1-vue-cache-{{ .Branch }}-{{ checksum "bindings/vue/yarn.lock" }}
-            - v1-vue-cache-{{ .Branch }}-
-            - v1-vue-cache-
-      - run:
-          name: Install Vue dependencies
-          command: |
-            cd bindings/vue
-            yarn install --pure-lockfile
-      - save_cache:
-          key: v1-vue-cache-{{ .Branch }}-{{ checksum "bindings/vue/yarn.lock" }}
-          paths:
-            - ./bindings/vue/node_modules
+      #- restore_cache:
+      #    keys:
+      #      - v1-vue-cache-{{ .Branch }}-{{ checksum "bindings/vue/yarn.lock" }}
+      #      - v1-vue-cache-{{ .Branch }}-
+      #      - v1-vue-cache-
+      #- run:
+      #    name: Install Vue dependencies
+      #    command: |
+      #      cd bindings/vue
+      #      yarn install --pure-lockfile
+      #- save_cache:
+      #    key: v1-vue-cache-{{ .Branch }}-{{ checksum "bindings/vue/yarn.lock" }}
+      #    paths:
+      #      - ./bindings/vue/node_modules
 
       # Tests
       - run:
@@ -131,7 +131,7 @@ jobs:
       - run: cd bindings/angular1; npm test
       - run: cd bindings/angular2; npm test
       - run: cd bindings/react; npm test
-      - run: cd bindings/vue; npm test
+      #- run: cd bindings/vue; npm test
       - run:
           name: Save test results
           command: |
